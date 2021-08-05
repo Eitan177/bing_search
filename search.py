@@ -38,13 +38,22 @@ st.title('step 2) add key words in second column, click, and link will be create
 col1, col2 = st.beta_columns(2)
 with col1:
     path=st.text_input('url or local path to your file','')
-    ##PATH="file:///C:/Users/ehalper2/Downloads/8067.ndpi-[38151,40957,52981,55787]2x.png"
-    
+    restrictpage=st.selectbox('see results from this site',['All sites','pathology.jhu.edu','webpathology.com','pathologyoutlines.com','shutterstock.com','medcell.med.yale.edu','histologyguide.com','radiopaedia.org'])
+    if restrictpage == 'All sites':
+        restrictpage=''
+    else:
+        restrictpage="+site:"+restrictpage
 
 with col2:
     words1=st.text_input('1) keyword','')
+    if words1 !='':
+        words1="+"+words1
     words2=st.text_input('2) keyword','')
+    if words2 !='':
+        words2="+"+words2
     words3=st.text_input('3) keyword','')
+    if words3 !-'':
+        words3="+"+words3
 
 
 
@@ -56,5 +65,8 @@ if path != '':
         uploaded_image = im.upload_image(path, title="Uploaded with PyImgur")
         st.header("https://www.google.com/searchbyimage?image_url="+uploaded_image.link+"&q="+words1+"+"+words2+"+"+words3)
     else:
-        st.header("https://www.google.com/searchbyimage?image_url="+path+"&q="+words1+"+"+words2+"+"+words3)
+        if restrictpage=='All sites':
+            st.header("https://www.google.com/searchbyimage?image_url="+path+"&q="+words1+words2+words3)
+        else:
+           st.header("https://www.google.com/searchbyimage?image_url="+path+"&q="+words1+words2+words3+restrictpage) 
     
