@@ -52,7 +52,7 @@ with col2:
     if words2 !='':
         words2="+"+words2
     words3=st.text_input('3) keyword','')
-    if words3 !-'':
+    if words3 !='':
         words3="+"+words3
 
 
