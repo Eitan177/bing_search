@@ -126,7 +126,7 @@ class similar:
                 huse3=st.slider(
                 'left albumizr window height for row '+str(key),
                 200, 2000,900, 100)
-                components.iframe("https://albumizr.com/a/1iDK",width=wuse3, height=huse3)
+                components.iframe("https://deadsimplechat.com/cHaKPZUFD",width=wuse3, height=huse3)
 
         with col2:
                 wuse4=st.slider(
