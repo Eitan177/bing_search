@@ -141,7 +141,6 @@ class similar:
             album_row_add=st.button('add albumizr row '+str(st.session_state['alkey'])+' (DOUBLE CLICK THIS BUTTON)')
             if album_row_add:
                 st.session_state['alkey']+=1
-        components.html("""<a href="https://twitter.com/intent/tweet?button_hashtag=TwitterDev&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #TwitterDev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>""")       
-        return self
+        components.html("""<a class="twitter-timeline" href="https://twitter.com/JHUPath?ref_src=twsrc%5Etfw">Tweets by JHUPath</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>""")
      
 showsim=similar()
